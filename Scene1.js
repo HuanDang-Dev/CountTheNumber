@@ -16,6 +16,7 @@ var textSubtrahend;
 var textAnswer;
 var checkCorrect = 0;
 var car;
+var statusPosition;
 
 var timedEvent1; // time event
 var checkTime = 0;
@@ -28,7 +29,7 @@ var audioBG;
 var audioEnd;
 var audioConfig = {
     mute: false,
-    volume: 2,
+    volume: 1,
     rate: 1,
     detune: 0,
     seek: 0,
@@ -87,7 +88,10 @@ class Scene1 extends Phaser.Scene{
 
         }).setOrigin(0, 0);
         
-        this.appHome.setInteractive().on('pointerdown', () => this.scene.start('Menu'));
+        this.appHome.setInteractive().on('pointerdown', () => {
+            this.scene.start('Menu');
+            audioBG.stop();
+        });
 
         //effect of sprites;
         this.input.on('gameobjectover', function (pointer, gameObject) { gameObject.setTint(0x8EEDE2); });
@@ -105,9 +109,10 @@ class Scene1 extends Phaser.Scene{
         clickAudio = this.sound.add('phase 1');
         
         //load image
-        this.ice_6 = this.add.image(150, 500, "ice 6").setOrigin(0, 0).setScale(0.3);
-        this.ice_4 = this.add.image(550, 500, "ice 4").setOrigin(0, 0).setScale(0.3);
-        this.ice_3 = this.add.image(950, 500, "ice 3").setOrigin(0, 0).setScale(0.3);
+        statusPosition = this.randomPosition();
+        this.ice_6 = this.add.image((statusPosition==0) ? 150 : 950, 500, "ice 6").setOrigin(0, 0).setScale(0.3);
+        this.ice_4 = this.add.image((statusPosition==1) ? 550 : 950, 500, "ice 4").setOrigin(0, 0).setScale(0.3);
+        this.ice_3 = this.add.image((statusPosition==0) ? 550 : 150, 500, "ice 3").setOrigin(0, 0).setScale(0.3);
         this.questionMark = this.add.image(200, 300, "questionMark").setOrigin(0, 0).setScale(0.7);
 
         // set onClick for the buttons;
@@ -145,9 +150,10 @@ class Scene1 extends Phaser.Scene{
         //load audio
         clickAudio = this.sound.add('phase 2');
 
-        this.ice_5 = this.add.image(550, 500, "ice 5").setOrigin(0, 0).setScale(0.3);
-        this.ice_2 = this.add.image(950, 500, "ice 2").setOrigin(0, 0).setScale(0.3);
-        this.ice_1 = this.add.image(150, 500, "ice 1").setOrigin(0, 0).setScale(0.3);
+        statusPosition = this.randomPosition();
+        this.ice_5 = this.add.image((statusPosition==0) ? 150 : 950, 500, "ice 5").setOrigin(0, 0).setScale(0.3);
+        this.ice_2 = this.add.image((statusPosition==1) ? 550 : 950, 500, "ice 2").setOrigin(0, 0).setScale(0.3);
+        this.ice_1 = this.add.image((statusPosition==0) ? 550 : 150, 500, "ice 1").setOrigin(0, 0).setScale(0.3);
 
         // set onClick for the buttons;
         this.ice_5.setInteractive().on('pointerdown', () => {
@@ -268,10 +274,11 @@ class Scene1 extends Phaser.Scene{
         clickAudio = this.sound.add('phase 5');
         
         //load image
-        this.dice_4 = this.add.image(150, 500, "dice 4").setOrigin(0, 0).setScale(0.7);
-        this.dice_5 = this.add.image(530, 500, "dice 5").setOrigin(0, 0).setScale(0.7);
+        statusPosition = this.randomPosition();
+        this.dice_4 = this.add.image((statusPosition==0) ? 150 : 910, 500, "dice 4").setOrigin(0, 0).setScale(0.7);
+        this.dice_5 = this.add.image((statusPosition==1) ? 530 : 910, 500, "dice 5").setOrigin(0, 0).setScale(0.7);
         this.dice_5.rotation += 0.04;
-        this.dice_1 = this.add.image(910, 500, "dice 1").setOrigin(0, 0).setScale(0.7);
+        this.dice_1 = this.add.image((statusPosition==0) ? 530 : 150, 500, "dice 1").setOrigin(0, 0).setScale(0.7);
 
         // set onClick for the buttons;
         this.dice_5.setInteractive().on('pointerdown', () => {
@@ -304,10 +311,11 @@ class Scene1 extends Phaser.Scene{
         clickAudio = this.sound.add('phase 6');
         
         //load image
-        this.dice_5 = this.add.image(150, 500, "dice 5").setOrigin(0, 0).setScale(0.7);
+        statusPosition = this.randomPosition();
+        this.dice_5 = this.add.image((statusPosition==0) ? 150 : 910, 500, "dice 5").setOrigin(0, 0).setScale(0.7);
         this.dice_5.rotation += 0.04;
-        this.dice_4 = this.add.image(530, 500, "dice 4").setOrigin(0, 0).setScale(0.7);
-        this.dice_2 = this.add.image(910, 500, "dice 2").setOrigin(0, 0).setScale(0.7);
+        this.dice_4 = this.add.image((statusPosition==1) ? 530 : 910, 500, "dice 4").setOrigin(0, 0).setScale(0.7);
+        this.dice_2 = this.add.image((statusPosition==0) ? 530 : 150, 500, "dice 2").setOrigin(0, 0).setScale(0.7);
 
         // set onClick for the buttons;
         this.dice_2.setInteractive().on('pointerdown', () => {
@@ -355,9 +363,11 @@ class Scene1 extends Phaser.Scene{
         number_4 = this.add.image(530, 450, strNumber1).setOrigin(0,0).setScale(0.7);
         number_10 = this.add.image(150, 450, strNumber2).setOrigin(0,0).setScale(0.7);
 
+        statusPosition = this.randomPosition();
+
         numberAnswer_1 = this.add.image(545, 650, strNumberAnswer1, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.7);
-        numberAnswer_5 = this.add.image(150, 650, strNumberAnswer2, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.7);
-        numberAnswer_6 = this.add.image(890, 650, strNumberAnswer3, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.7);
+        numberAnswer_5 = this.add.image((statusPosition==0) ? 150 : 890, 650, strNumberAnswer2, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.7);
+        numberAnswer_6 = this.add.image((statusPosition==0) ? 890 : 150, 650, strNumberAnswer3, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.7);
 
         numberAnswer_1.setInteractive();
         numberAnswer_5.setInteractive();
@@ -451,6 +461,12 @@ class Scene1 extends Phaser.Scene{
             car.x = 100;
             checkCorrect = 0;
         }
+    }
+
+    randomPosition(){
+        var temp = Phaser.Math.Between(0, 1);
+
+        return temp;
     }
 
     //Update;

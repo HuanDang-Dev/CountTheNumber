@@ -20,7 +20,6 @@ class Menu extends Phaser.Scene {
         this.play.setInteractive().on('pointerdown', () => {
             time = 0;
             this.scene.start('Scene1');
-
         });
 
         this.textPlay = this.add.text(615, 620, "Play", {
