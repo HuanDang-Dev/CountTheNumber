@@ -1,0 +1,209 @@
+{
+    "test1": {
+      "files": [
+        {
+          "type": "image",
+          "key": "backGround",
+          "url": "assets/images/background/background.jpg"
+        },
+        {
+          "type": "image",
+          "key": "kodi",
+          "url": "assets/images/background/kodi.png"
+        },
+        {
+          "type": "image",
+          "key": "appHome",
+          "url": "assets/images/background/appHome.png"
+        },
+        {
+          "type": "image",
+          "key": "questionMark",
+          "url": "assets/images/background/questionMark.png"
+        },
+        {
+          "type": "image",
+          "key": "khanAcademyKid",
+          "url": "assets/images/background/khan.png"
+        },
+        {
+          "type": "image",
+          "key": "car",
+          "url": "assets/images/background/car.png"
+        },
+        {
+          "type": "image",
+          "key": "speak 1",
+          "url": "assets/images/imageAudio/speak 1.png"
+        },
+        {
+          "type": "image",
+          "key": "numberAnswer_1",
+          "url": "assets/images/chooseACount/so_1.png"
+        },
+        {
+          "type": "image",
+          "key": "numberAnswer_5",
+          "url": "assets/images/chooseACount/so_5.png"
+        },
+        {
+          "type": "image",
+          "key": "numberAnswer_6",
+          "url": "assets/images/chooseACount/so_6.png"
+        },
+        {
+          "type": "image",
+          "key": "number_10",
+          "url": "assets/images/number/so10.png"
+        },
+        {
+          "type": "image",
+          "key": "number_4",
+          "url": "assets/images/number/so4.png"
+        },
+        {
+          "type": "image",
+          "key": "number_5",
+          "url": "assets/images/number/so5.png"
+        },
+        {
+          "type": "image",
+          "key": "number_6",
+          "url": "assets/images/number/so6.png"
+        },
+        {
+          "type": "image",
+          "key": "ice 6",
+          "url": "assets/images/choose/ice_6.png"
+        },
+        {
+          "type": "image",
+          "key": "ice 5",
+          "url": "assets/images/choose/ice_5.png"
+        },
+        {
+          "type": "image",
+          "key": "ice 4",
+          "url": "assets/images/choose/ice_4.png"
+        },
+        {
+          "type": "image",
+          "key": "ice 3",
+          "url": "assets/images/choose/ice_3.png"
+        },
+        {
+          "type": "image",
+          "key": "ice 2",
+          "url": "assets/images/choose/ice_2.png"
+        },
+        {
+          "type": "image",
+          "key": "ice 1",
+          "url": "assets/images/choose/ice_1.png"
+        },
+        {
+          "type": "image",
+          "key": "dice 5",
+          "url": "assets/images/dice/dice_5.png"
+        },
+        {
+          "type": "image",
+          "key": "dice 4",
+          "url": "assets/images/dice/dice_4.png"
+        },
+        {
+          "type": "image",
+          "key": "dice 2",
+          "url": "assets/images/dice/dice_2.png"
+        },
+        {
+          "type": "image",
+          "key": "dice 1",
+          "url": "assets/images/dice/dice_1.png"
+        },
+        {
+          "type": "audio",
+          "key": "bgMusic",
+          "url": "assets/audio/audioBackGround.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "audioEndGame",
+          "url": "assets/audio/audioEndGame.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "phase 1",
+          "url": "assets/audio/audioScene1/phase1.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "phase 2",
+          "url": "assets/audio/audioScene1/phase2.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "phase 3",
+          "url": "assets/audio/audioScene1/phase3.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "phase 4",
+          "url": "assets/audio/audioScene1/phase4.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "phase 5",
+          "url": "assets/audio/audioScene1/phase5.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "phase 6",
+          "url": "assets/audio/audioScene1/phase6.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "answerPhase 1",
+          "url": "assets/audio/audioScene1/answerPhase1.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "answerPhase 2",
+          "url": "assets/audio/audioScene1/answerPhase2.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "answerPhase 3",
+          "url": "assets/audio/audioScene1/answerPhase3.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "answerPhase 4",
+          "url": "assets/audio/audioScene1/answerPhase4.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "answerPhase 5",
+          "url": "assets/audio/audioScene1/answerPhase5.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "answerPhase 6",
+          "url": "assets/audio/audioScene1/answerPhase6.mp3"
+        },
+        {
+          "type": "audio",
+          "key": "wrong",
+          "url": "assets/audio/audioScene1/wrong.mp3"
+        }
+      ]
+    },
+  
+    "meta": {
+      "generated": "1401380327373",
+      "app": "Phaser 3 Asset Packer",
+      "url": "https://phaser.io",
+      "version": "1.0",
+      "copyright": "Photon Storm Ltd. 2018"
+    }
+  }
