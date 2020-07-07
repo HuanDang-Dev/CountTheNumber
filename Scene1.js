@@ -57,32 +57,32 @@ class Scene1 extends Phaser.Scene{
         audioBG.play(audioConfig);
 
         // add image background;
-        this.background = this.add.image(0, 0, "backGround").setOrigin(0, 0).setScale(0.8);
-        this.kodi = this.add.image(1080, 50, "kodi").setOrigin(0, 0).setScale(0.5);
-        car = this.add.image(100, 900, 'car').setOrigin(0, 0).setScale(0.5);
+        this.background = this.add.image(0, 0, "backGround").setOrigin(0, 0).setScale(0.6);
+        this.kodi = this.add.image(850, 20, "kodi").setOrigin(0, 0).setScale(0.4);
+        car = this.add.image(50, 660, 'car').setOrigin(0, 0).setScale(0.5);
         
         // add image button;
-        this.appHome = this.add.sprite(80, 60, 'appHome').setOrigin(0,0).setScale(0.7);
+        this.appHome = this.add.sprite(30, 40, 'appHome').setOrigin(0,0).setScale(0.55);
 
-        this.textTime = this.add.text(1190, 170, "00:00",{
+        this.textTime = this.add.text(870, 130, "00:00",{
             font: "30px Arial",
             fill: "red"
         }).setOrigin(0, 0);
 
         // add image audio;
-        speak = this.add.image(450, 170, 'speak 1').setScale(1.2);
+        speak = this.add.image(300, 130, 'speak 1').setScale(1.2);
         speak.setInteractive().on('pointerdown', () =>{
             clickAudio.play();
         });
         wrongAudio = this.sound.add('wrong');
         
         //question
-        this.textQuestion = this.add.text(350, 70, 'Choose the most accurate answer ?',{
+        this.textQuestion = this.add.text(200, 40, 'Choose the most accurate answer ?',{
             font: "40px Arial bold",
             fill: "red"
         }).setOrigin(0, 0);
 
-        this.textListen = this.add.text(500, 150, 'listen to the question',{
+        this.textListen = this.add.text(340, 115, 'listen to the question',{
             font: "30px Arial bold",
             fill: "grey",
 
@@ -110,10 +110,10 @@ class Scene1 extends Phaser.Scene{
         
         //load image
         statusPosition = this.randomPosition();
-        this.ice_6 = this.add.image((statusPosition==0) ? 150 : 950, 500, "ice 6").setOrigin(0, 0).setScale(0.3);
-        this.ice_4 = this.add.image((statusPosition==1) ? 550 : 950, 500, "ice 4").setOrigin(0, 0).setScale(0.3);
-        this.ice_3 = this.add.image((statusPosition==0) ? 550 : 150, 500, "ice 3").setOrigin(0, 0).setScale(0.3);
-        this.questionMark = this.add.image(200, 300, "questionMark").setOrigin(0, 0).setScale(0.7);
+        this.ice_6 = this.add.image((statusPosition==0) ? 150 : 690, 400, "ice 6").setOrigin(0, 0).setScale(0.2);
+        this.ice_4 = this.add.image((statusPosition==1) ? 420 : 690, 400, "ice 4").setOrigin(0, 0).setScale(0.2);
+        this.ice_3 = this.add.image((statusPosition==0) ? 420 : 150, 400, "ice 3").setOrigin(0, 0).setScale(0.2);
+        this.questionMark = this.add.image(150, 250, "questionMark").setOrigin(0, 0).setScale(0.55);
 
         // set onClick for the buttons;
         this.ice_6.setInteractive().on('pointerdown', () => {
@@ -151,9 +151,9 @@ class Scene1 extends Phaser.Scene{
         clickAudio = this.sound.add('phase 2');
 
         statusPosition = this.randomPosition();
-        this.ice_5 = this.add.image((statusPosition==0) ? 150 : 950, 500, "ice 5").setOrigin(0, 0).setScale(0.3);
-        this.ice_2 = this.add.image((statusPosition==1) ? 550 : 950, 500, "ice 2").setOrigin(0, 0).setScale(0.3);
-        this.ice_1 = this.add.image((statusPosition==0) ? 550 : 150, 500, "ice 1").setOrigin(0, 0).setScale(0.3);
+        this.ice_5 = this.add.image((statusPosition==0) ? 150 : 690, 400, "ice 5").setOrigin(0, 0).setScale(0.2);
+        this.ice_2 = this.add.image((statusPosition==1) ? 420 : 690, 400, "ice 2").setOrigin(0, 0).setScale(0.2);
+        this.ice_1 = this.add.image((statusPosition==0) ? 420 : 150, 400, "ice 1").setOrigin(0, 0).setScale(0.2);
 
         // set onClick for the buttons;
         this.ice_5.setInteractive().on('pointerdown', () => {
@@ -183,55 +183,47 @@ class Scene1 extends Phaser.Scene{
     }
 
     calculationSmall(subtrahend, answer){
-        sub1 = this.add.text(430, 280, '-', {
-            font: "100px Arial",
+        sub1 = this.add.text(320, 245, '-', {
+            font: "70px Arial",
             fill: "red"
         }).setOrigin(0, 0);
-        textSubtrahend = this.add.text(610, 300, subtrahend, {
-            font: "80px Arial",
+        textSubtrahend = this.add.text(450, 250, subtrahend, {
+            font: "70px Arial",
             fill: "red"
         }).setOrigin(0, 0);
-        equal1 = this.add.text(800, 290, '=', {
-            font: "100px Arial",
+        equal1 = this.add.text(600, 250, '=', {
+            font: "70px Arial",
             fill: "red"
         }).setOrigin(0, 0);
-        textAnswer = this.add.text(970, 300, answer, {
-            font: "80px Arial",
+        textAnswer = this.add.text(750, 250, answer, {
+            font: "70px Arial",
             fill: "red"
         }).setOrigin(0, 0);
     }
 
     calculationDice(number, answer){
-        this.questionMark = this.add.image(610, 300, "questionMark").setOrigin(0, 0).setScale(0.7);
-        sub1 = this.add.text(430, 280, '-', {
-            font: "100px Arial",
+        this.questionMark = this.add.image(450, 250, "questionMark").setOrigin(0, 0).setScale(0.55);
+        textSubtrahend = this.add.text(170, 250, number, {
+            font: "70px Arial",
             fill: "red"
         }).setOrigin(0, 0);
-        textSubtrahend = this.add.text(200, 300, number, {
-            font: "80px Arial",
-            fill: "red"
-        }).setOrigin(0, 0);
-        equal1 = this.add.text(800, 290, '=', {
-            font: "100px Arial",
-            fill: "red"
-        }).setOrigin(0, 0);
-        textAnswer = this.add.text(970, 300, answer, {
-            font: "80px Arial",
+        textAnswer = this.add.text(750, 250, answer, {
+            font: "70px Arial",
             fill: "red"
         }).setOrigin(0, 0);
     }
 
     calculation(number, subtrahend, answer){
-        textNumber = this.add.text(200, 300, number, {
-            font: "80px Arial",
+        textNumber = this.add.text(150, 250, number, {
+            font: "70px Arial",
             fill: "red"
         }).setOrigin(0, 0);
-        sub2 = this.add.text(430, 480, '-', {
-            font: "100px Arial",
+        sub2 = this.add.text(320, 350, '-', {
+            font: "70px Arial",
             fill: "red"
         }).setOrigin(0, 0);
-        equal2 = this.add.text(800, 490, '=', {
-            font: "100px Arial",
+        equal2 = this.add.text(600, 350, '=', {
+            font: "70px Arial",
             fill: "red"
         }).setOrigin(0, 0);
         this.calculationSmall(subtrahend, answer);
@@ -275,10 +267,10 @@ class Scene1 extends Phaser.Scene{
         
         //load image
         statusPosition = this.randomPosition();
-        this.dice_4 = this.add.image((statusPosition==0) ? 150 : 910, 500, "dice 4").setOrigin(0, 0).setScale(0.7);
-        this.dice_5 = this.add.image((statusPosition==1) ? 530 : 910, 500, "dice 5").setOrigin(0, 0).setScale(0.7);
+        this.dice_4 = this.add.image((statusPosition==0) ? 120 : 680, 400, "dice 4").setOrigin(0, 0).setScale(0.55);
+        this.dice_5 = this.add.image((statusPosition==1) ? 410 : 680, 400, "dice 5").setOrigin(0, 0).setScale(0.55);
         this.dice_5.rotation += 0.04;
-        this.dice_1 = this.add.image((statusPosition==0) ? 530 : 150, 500, "dice 1").setOrigin(0, 0).setScale(0.7);
+        this.dice_1 = this.add.image((statusPosition==0) ? 410 : 120, 400, "dice 1").setOrigin(0, 0).setScale(0.55);
 
         // set onClick for the buttons;
         this.dice_5.setInteractive().on('pointerdown', () => {
@@ -312,10 +304,10 @@ class Scene1 extends Phaser.Scene{
         
         //load image
         statusPosition = this.randomPosition();
-        this.dice_5 = this.add.image((statusPosition==0) ? 150 : 910, 500, "dice 5").setOrigin(0, 0).setScale(0.7);
+        this.dice_5 = this.add.image((statusPosition==0) ? 120 : 680, 400, "dice 5").setOrigin(0, 0).setScale(0.55);
         this.dice_5.rotation += 0.04;
-        this.dice_4 = this.add.image((statusPosition==1) ? 530 : 910, 500, "dice 4").setOrigin(0, 0).setScale(0.7);
-        this.dice_2 = this.add.image((statusPosition==0) ? 530 : 150, 500, "dice 2").setOrigin(0, 0).setScale(0.7);
+        this.dice_4 = this.add.image((statusPosition==1) ? 410 : 680, 400, "dice 4").setOrigin(0, 0).setScale(0.55);
+        this.dice_2 = this.add.image((statusPosition==0) ? 410 : 120, 400, "dice 2").setOrigin(0, 0).setScale(0.55);
 
         // set onClick for the buttons;
         this.dice_2.setInteractive().on('pointerdown', () => {
@@ -335,12 +327,12 @@ class Scene1 extends Phaser.Scene{
                 speak.destroy();
                 audioEnd = this.sound.add('audioEndGame');
                 audioEnd.play();
-                this.khanAcademyKid = this.add.image(-70, 215, "khanAcademyKid").setOrigin(0, 0).setScale(0.6);
-                this.textGameOver = this.add.text(280, 70, "Well ! You have completed the lesson !!!", {
+                this.khanAcademyKid = this.add.image(-100, 150, "khanAcademyKid").setOrigin(0, 0).setScale(0.5);
+                this.textGameOver = this.add.text(140, 30, "Well ! You have completed the lesson !!!", {
                     font: "40px Arial", 
                     fill: "red"
                 }).setOrigin(0, 0);
-                this.time = this.add.text(550, 120, 'Timed: ' + time + 's', {
+                this.time = this.add.text(400, 100, 'Timed: ' + time + 's', {
                     font: "40px Arial", 
                     fill: "red"
                 }).setOrigin(0, 0);
@@ -360,14 +352,14 @@ class Scene1 extends Phaser.Scene{
     //create phase3, phase4, phase5, phase6
     createPhase(strNumber1, strNumber2, strNumberAnswer1, strNumberAnswer2, strNumberAnswer3, numberCheckPosition){
         // add image number;
-        number_4 = this.add.image(530, 450, strNumber1).setOrigin(0,0).setScale(0.7);
-        number_10 = this.add.image(150, 450, strNumber2).setOrigin(0,0).setScale(0.7);
+        number_4 = this.add.image(400, 330, strNumber1).setOrigin(0,0).setScale(0.55);
+        number_10 = this.add.image(120, 330, strNumber2).setOrigin(0,0).setScale(0.55);
 
         statusPosition = this.randomPosition();
 
-        numberAnswer_1 = this.add.image(545, 650, strNumberAnswer1, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.7);
-        numberAnswer_5 = this.add.image((statusPosition==0) ? 150 : 890, 650, strNumberAnswer2, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.7);
-        numberAnswer_6 = this.add.image((statusPosition==0) ? 890 : 150, 650, strNumberAnswer3, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.7);
+        numberAnswer_1 = this.add.image(410, 470, strNumberAnswer1, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.55);
+        numberAnswer_5 = this.add.image((statusPosition==0) ? 120 : 680, 470, strNumberAnswer2, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.55);
+        numberAnswer_6 = this.add.image((statusPosition==0) ? 680 : 120, 470, strNumberAnswer3, Phaser.Math.RND.pick(this.background)).setOrigin(0,0).setScale(0.55);
 
         numberAnswer_1.setInteractive();
         numberAnswer_5.setInteractive();
@@ -379,20 +371,20 @@ class Scene1 extends Phaser.Scene{
         this.input.setDraggable(numberAnswer_5);
         this.input.setDraggable(numberAnswer_6);
 
-        dropImage = this.add.image(950, 480, "questionMark").setOrigin(0, 0).setScale(0.7);
+        dropImage = this.add.image(730, 350, "questionMark").setOrigin(0, 0).setScale(0.55);
         dropImage.setInteractive();
         dropImage.input.dropZone = true;
 
         //drag and drop
         this.input.on('dragstart', function (pointer, gameObject) {
             this.children.bringToTop(gameObject);
-            if (gameObject.x >= 50 && gameObject.x <= 250  && gameObject.y >= 550 && gameObject.y <= 750 ){
+            if (gameObject.x >= 20 && gameObject.x <= 220  && gameObject.y >= 420 && gameObject.y <= 690 ){
                 position = 1;
             }
-            if (gameObject.x >= 445 && gameObject.x <= 645  && gameObject.y >= 550 && gameObject.y <= 750 ){
+            if (gameObject.x >= 310 && gameObject.x <= 510  && gameObject.y >= 420 && gameObject.y <= 690 ){
                 position = 2;
             }
-            if (gameObject.x >= 790 && gameObject.x <= 990  && gameObject.y >= 550 && gameObject.y <= 750 ){
+            if (gameObject.x >= 580 && gameObject.x <= 780  && gameObject.y >= 420 && gameObject.y <= 690 ){
                 position = 3;
             }
         }, this);
@@ -406,7 +398,7 @@ class Scene1 extends Phaser.Scene{
             gameObject.x = dropZone.x - 50;
             gameObject.y = dropZone.y - 30;
 
-            if (gameObject.x >= 800 && gameObject.x <= 1000  && gameObject.y >= 300 && gameObject.y <= 600 ){
+            if (gameObject.x >= 630 && gameObject.x <= 830  && gameObject.y >= 250 && gameObject.y <= 450 ){
                 if(position ==  numberCheckPosition){
                     clickAudioAnswer.play();
                     checkCorrect = 1;
@@ -457,8 +449,8 @@ class Scene1 extends Phaser.Scene{
 
     animationBall(){
         car.x += 10;
-        if (car.x > 1000){
-            car.x = 100;
+        if (car.x > 800){
+            car.x = 50;
             checkCorrect = 0;
         }
     }

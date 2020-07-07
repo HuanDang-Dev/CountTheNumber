@@ -11,27 +11,15 @@ class Menu extends Phaser.Scene {
     }
 
     create(){
-        this.background = this.add.image(0, 0, "backGround").setOrigin(0, 0).setScale(0.8);
-        this.khanAcademyKids = this.add.image(0, 222, "khanAcademyKids").setOrigin(0, 0);
+        this.background = this.add.image(0, 0, "backGround").setOrigin(0, 0).setScale(0.6);
+        this.khanAcademyKids = this.add.image(0, 167, "khanAcademyKids").setOrigin(0, 0).setScale(0.75);
         
         // Choose scene 1 
-        this.play = this.add.sprite(570, 450, 'play').setOrigin(0,0).setScale(0.3);
+        this.play = this.add.sprite(400, 320, 'play').setOrigin(0,0).setScale(0.3);
 
         this.play.setInteractive().on('pointerdown', () => {
             time = 0;
             this.scene.start('Scene1');
-        });
-
-        this.textPlay = this.add.text(615, 620, "Play", {
-            font: "40px Arial", 
-            fill: "blue"
-
-        }).setOrigin(0, 0);
-
-        this.textPlay.setInteractive().on('pointerdown', () =>{
-            time = 0;
-            this.scene.start('Scene1');
-
         });
 
         this.input.on('gameobjectover', function (pointer, gameObject) {
